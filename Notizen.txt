@@ -1,0 +1,10 @@
+python -m venv venv
+venv/Scripts/activate
+
+Installieren
+pip install -r requirements.txt
+
+Migration:
+flask db init // Vorbereitung
+flask db migrate // Differenz erstellen
+flask db upgrade // Alle upgrade-Differenzen ausführen

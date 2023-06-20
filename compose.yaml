@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: sml12345
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 5050:80
+    volumes:
+      - pgadmindata:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@sluz.ch
+      PGADMIN_DEFAULT_PASSWORD: sml12345
+volumes:
+  pgdata:
+    name: pg_data
+  pgadmindata:
+    name: pgadmin_data_aL
