@@ -1,7 +1,7 @@
 from flask import request
 from flask_restful import Resource
 from http import HTTPStatus
-from models.job import Job, job_list
+from models.job import Job #job_list
 
 
 class JobListResource(Resource):
