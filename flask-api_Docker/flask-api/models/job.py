@@ -11,7 +11,6 @@ class Job(db.Model):
     description = db.Column(db.String(200), nullable=False)
     salary = db.Column(db.Integer)
     is_published = db.Column(db.Boolean, default=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     @property
     def data(self):

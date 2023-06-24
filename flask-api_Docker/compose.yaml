@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mysql
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: sml12345
+      MYSQL_DATABASE: jobinserate
+      MYSQL_USER: ineichen
+      MYSQL_PASSWORD: sml12345
+    restart: always
+    volumes:
+      - db_mysql:/var/lib/mysql
+  pma:
+    image: phpmyadmin
+    environment:
+      PMA_HOST: db
+    restart: always
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+  webapp:
+    build: ./flask-api
+    container_name: flask_api
+    environment:
+      - DB_HOST=db
+      - DB_USER=ineichen
+      - DB_PASSWORD=sml12345
+      - DB_NAME=jobinserate
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+volumes:
+  db_mysql:
+    name: mysql_api

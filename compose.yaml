@@ -20,4 +20,4 @@ volumes:
   pgdata:
     name: pg_data
   pgadmindata:
-    name: pgadmin_data_aL
+    name: pgadmin_data

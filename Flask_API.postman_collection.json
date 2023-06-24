@@ -28,6 +28,16 @@
 		{
 			"name": "Create job",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4NzYzMDE4NywianRpIjoiNGY0MjBmNmMtYmNhYy00M2Q4LWE0NDQtNGY4MTIxOWFjNGYxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjg3NjMwMTg3LCJleHAiOjE2ODc2MzEwODd9.WiHSJyoU-auWYplBTV7a1x3Xr-wer3DJK9oCzcMkS-o",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -76,6 +86,16 @@
 		{
 			"name": "Publish Job",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4NzYyODczNCwianRpIjoiNWIzM2YwY2MtYTlkNy00MjM4LWE5NjctM2U1MDY0ZWFjZjdiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjg3NjI4NzM0LCJleHAiOjE2ODc2Mjk2MzR9.gjjwAuNgfdgkdUSQ3cOEUHtuNej1-p6uj3fpkm8p63s",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -101,6 +121,16 @@
 		{
 			"name": "Draft Job",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4NzYyODczNCwianRpIjoiNWIzM2YwY2MtYTlkNy00MjM4LWE5NjctM2U1MDY0ZWFjZjdiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjg3NjI4NzM0LCJleHAiOjE2ODc2Mjk2MzR9.gjjwAuNgfdgkdUSQ3cOEUHtuNej1-p6uj3fpkm8p63s",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {
@@ -151,6 +181,16 @@
 		{
 			"name": "Delete Job",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4NzYyODczNCwianRpIjoiNWIzM2YwY2MtYTlkNy00MjM4LWE5NjctM2U1MDY0ZWFjZjdiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjg3NjI4NzM0LCJleHAiOjE2ODc2Mjk2MzR9.gjjwAuNgfdgkdUSQ3cOEUHtuNej1-p6uj3fpkm8p63s",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {
@@ -163,6 +203,91 @@
 					"path": [
 						"jobs",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin@sluz.ch\",\r\n    \"password\": \"sml12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin@sluz.ch\",\r\n    \"password\": \"sml12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4NzYzMDE3MCwianRpIjoiMGEwMjIzYzMtYTBlYS00ZjVmLWIwN2MtMGVlYzlhM2ViMGFkIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOjEsIm5iZiI6MTY4NzYzMDE3MCwiZXhwIjoxNjkwMjIyMTcwfQ.lJWV8eUHBh1zkL4fMEATSOzhZulhV72TWgEaBQxpYxI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"refresh"
 					]
 				}
 			},
